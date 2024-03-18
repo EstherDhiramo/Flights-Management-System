@@ -37,3 +37,20 @@ deluser(): #This function is responsible for deleting users
                     r1.title("Success!")
                     tk.Label(master=r1,text="Admin User Successfully Deleted!").grid(row=1,column=1)
                     
+ elif u in supervis:
+                del supervis[u]
+                r1=tk.Tk()
+                r1.title("Success!")
+                tk.Label(master=r1,text=" Supervisor Successfully Deleted!").grid(row=1,column=1)
+            if u in standard:
+                del standard[u]
+                r1=tk.Tk()
+                r1.title("Success!")
+                tk.Label(master=r1,text="Standard User Successfully Deleted!").grid(row=1,column=1)                
+    delusersc=tk.Tk()
+    delusersc.title("Delete A User")
+    tk.Label(master=delusersc,text="Enter the Username").grid(row=1,column=0)
+    uname=tk.Entry(master=delusersc)
+    unamne.grid(row=1,column=1)
+    r2=tk.Button(master=delusersc,text="Confirm Deletion",width=25,command=deluserback).grid(row=1,column=2)
+    
