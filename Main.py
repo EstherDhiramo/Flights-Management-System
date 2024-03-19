@@ -65,4 +65,11 @@ def manageuser():#this function is responsible for adding users
                     popup.title("Success")
                     tk.Label(master=popup,text="Admin Successfully Added!").grid(row=1,column=1)
                 u=usname.get()
+                if u in admin or u in supervis or u in standard:
+                        popup=tk.Tk()
+                        popup.title("Username Already Exists!")
+                        tk.Label(master=popup,text="Username Already Exists! Please Try Again").grid(row=1,column=1)
+                        manageusersc.destroy()
+                        aa.destroy()
+                    
                 
