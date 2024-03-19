@@ -54,3 +54,15 @@ deluser(): #This function is responsible for deleting users
     unamne.grid(row=1,column=1)
     r2=tk.Button(master=delusersc,text="Confirm Deletion",width=25,command=deluserback).grid(row=1,column=2)
     
+def manageuser():#this function is responsible for adding users
+    def adduser():
+        def addadmin():
+            def adminusname():
+                def adminuserback():
+                    p=passw.get()                                                             
+                    admin[u]=p
+                    popup=tk.Tk()
+                    popup.title("Success")
+                    tk.Label(master=popup,text="Admin Successfully Added!").grid(row=1,column=1)
+                u=usname.get()
+                
