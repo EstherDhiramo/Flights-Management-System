@@ -71,5 +71,12 @@ def manageuser():#this function is responsible for adding users
                         tk.Label(master=popup,text="Username Already Exists! Please Try Again").grid(row=1,column=1)
                         manageusersc.destroy()
                         aa.destroy()
+                    else:        
+                    tk.Label(master=aa,text="Enter the Password").grid(row=2,column=0)
+                    passw=tk.Entry(master=aa,show='*')
+                    passw.grid(row=2,column=1)
+                    tk.Button(master=aa,text="Confirm Password",command=adminuserback,width=25).grid(row=2,column=3)
+            aa=tk.Tk()
+            aa.title("Add An Admin")
                     
                 
