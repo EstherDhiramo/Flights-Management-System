@@ -82,6 +82,29 @@ def manageuser():#this function is responsible for adding users
             usname=tk.Entry(master=aa)
             usname.grid(row=1,column=1)
             a3=tk.Button(master=aa,text="Confirm Username",width=25,command=adminusname).grid(row=1,column=3)
-        
-                    
-                
+        def addsuper():
+            def superusname():
+                def superuserback():
+                    p=passw.get()                                                             
+                    supervis[u]=p
+                    popup=tk.Tk()
+                    popup.title("Success")
+                    tk.Label(master=popup,text="Supervisor Successfully Added!").grid(row=1,column=1)
+                u=usname.get()
+                if u in admin or u in supervis or u in standard:
+                        popup=tk.Tk()
+                        popup.title("Username Already Exists!")
+                        tk.Label(master=popup,text="Username Already Exists! Please Try Again").grid(row=1,column=1)
+                        manageusersc.destroy()
+                        aa.destroy()
+                else:        
+                    tk.Label(master=aa,text="Enter the Password").grid(row=2,column=0)
+                    passw=tk.Entry(master=aa,show='*')
+                    passw.grid(row=2,column=1)
+                    tk.Button(master=aa,text="Confirm Password",command=superuserback,width=25).grid(row=2,column=3)
+            aa=tk.Tk()
+            aa.title("Add A Supervisor")
+            tk.Label(master=aa,text="Enter the Username").grid(row=1,column=0)
+            usname=tk.Entry(master=aa)
+            usname.grid(row=1,column=1)
+            a3=tk.Button(master=aa,text="Confirm Username",width=25,command=superusname).grid(row=1,column=3)
