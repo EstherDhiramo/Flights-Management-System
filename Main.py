@@ -108,3 +108,34 @@ def manageuser():#this function is responsible for adding users
             usname=tk.Entry(master=aa)
             usname.grid(row=1,column=1)
             a3=tk.Button(master=aa,text="Confirm Username",width=25,command=superusname).grid(row=1,column=3)
+     def addstand():
+            def standusname():
+                def standuserback():
+                    p=passw.get()                                                             
+                    standard[u]=p                    
+                    popup=tk.Tk()
+                    popup.title("Success")
+                    tk.Label(master=popup,text="Standard User Successfully Added!").grid(row=1,column=1)
+                u=usname.get()
+                if u in admin or u in supervis or u in standard:
+                        popup=tk.Tk()
+                        popup.title("Username Already Exists!")
+                        tk.Label(master=popup,text="Username Already Exists! Please Try Again").grid(row=1,column=1)
+                        
+                        aa.destroy()
+                else:        
+                    tk.Label(master=aa,text="Enter the Password").grid(row=2,column=0)
+                    passw=tk.Entry(master=aa,show='*')
+                    passw.grid(row=2,column=1)
+                    tk.Button(master=aa,text="Confirm Password",command=standuserback,width=25).grid(row=2,column=3)
+            aa=tk.Tk()
+            aa.title("Add A Standard User")
+            tk.Label(master=aa,text="Enter the Username").grid(row=1,column=0)
+            usname=tk.Entry(master=aa)
+            usname.grid(row=1,column=1)
+            a3=tk.Button(master=aa,text="Confirm Username",width=25,command=standusname).grid(row=1,column=3)
+        addusersc=tk.Tk()
+        addusersc.title("Add A User")
+        tk.Button(master=addusersc,width=25,text="Add An Admin",command=addadmin).grid(row=1,column=1)
+        tk.Button(master=addusersc,width=25,text="Add A Supervisor",command=addsuper).grid(row=2,column=1)
+        tk.Button(master=addusersc,width=25,text="Add A Standard User",command=addstand).grid(row=3,column=1)
