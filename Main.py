@@ -78,5 +78,10 @@ def manageuser():#this function is responsible for adding users
                     tk.Button(master=aa,text="Confirm Password",command=adminuserback,width=25).grid(row=2,column=3)
             aa=tk.Tk()
             aa.title("Add An Admin")
+            tk.Label(master=aa,text="Enter the Username").grid(row=1,column=0)
+            usname=tk.Entry(master=aa)
+            usname.grid(row=1,column=1)
+            a3=tk.Button(master=aa,text="Confirm Username",width=25,command=adminusname).grid(row=1,column=3)
+        
                     
                 
