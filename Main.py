@@ -139,3 +139,21 @@ def manageuser():#this function is responsible for adding users
         tk.Button(master=addusersc,width=25,text="Add An Admin",command=addadmin).grid(row=1,column=1)
         tk.Button(master=addusersc,width=25,text="Add A Supervisor",command=addsuper).grid(row=2,column=1)
         tk.Button(master=addusersc,width=25,text="Add A Standard User",command=addstand).grid(row=3,column=1)
+    def viewuser():
+        viewsc=tk.Tk()
+        viewsc.title("View Users")
+        tk.Label(master=viewsc,text="Admins Are:").grid(row=0,column=0)
+        c=0
+        for i in admin:
+            c+=1
+            tk.Label(master=viewsc,text=("------",i)).grid(row=c,column=0)
+        c+=1
+        tk.Label(master=viewsc,text="Supervisors Are:").grid(row=c,column=0)        
+        for i in supervis:
+            c+=1
+            tk.Label(master=viewsc,text=("-----",i)).grid(row=c,column=0)
+        c+=1
+        tk.Label(master=viewsc,text="Standard Users Are:").grid(row=c,column=0)        
+        for i in standard:
+            c+=1
+            tk.Label(master=viewsc,text=("-----",i)).grid(row=c,column=0)
